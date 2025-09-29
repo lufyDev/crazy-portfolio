@@ -80,20 +80,33 @@ export const Skill_data = [
   
   ];
   
-  export const Socials = [
-    {
-      name: "Discord",
-      src: "/instagram.svg",
-    },
-    {
-      name: "Facebook",
-      src: "/facebook.svg",
-    },
-    {
-      name: "Instagram",
-      src: "/discord.svg",
-    },
-  ];
+export const Socials = [
+  {
+    name: "Instagram",
+    src: "/instagram.svg",
+    url: "https://instagram.com/webchaindev"
+  },
+  {
+    name: "Facebook", 
+    src: "/facebook.svg",
+    url: "https://facebook.com/webchaindev"
+  },
+  {
+    name: "Discord",
+    src: "/discord.svg",
+    url: "https://discord.gg/webchaindev"
+  },
+  {
+    name: "GitHub",
+    src: "/github-142-svgrepo-com.svg",
+    url: "https://github.com/webchaindev"
+  },
+  {
+    name: "YouTube",
+    src: "/youtube-svgrepo-com.svg", 
+    url: "https://youtube.com/@webchaindev"
+  }
+];
   
   
   

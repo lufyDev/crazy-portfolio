@@ -62,3 +62,59 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Enhanced animations */
+@keyframes slowspin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-slowspin {
+    animation: slowspin 3s linear infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(180, 155, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(180, 155, 255, 0.6);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Improved gradients */
+.gradient-border {
+    background: linear-gradient(135deg, 
+        rgba(112, 66, 248, 0.4) 0%, 
+        rgba(180, 155, 255, 0.4) 50%, 
+        rgba(156, 178, 255, 0.4) 100%);
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

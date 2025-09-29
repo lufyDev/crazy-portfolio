@@ -8,7 +8,7 @@ import * as random from 'maath/random'
 
 const StarBackground = (props) => {
   const ref = useRef()
-  const [sphere] = useState(() => random.inSphere(new Float32Array(5000), {radius: 1.2}));
+  const [sphere] = useState(() => random.inSphere(new Float32Array(8000), {radius: 2}));
 
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10
