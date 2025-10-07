@@ -50,15 +50,53 @@ const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className='w-full h-full flex justify-center items-center order-first lg:order-last'
+        className='w-full h-full flex justify-center items-center order-first lg:order-last relative'
       >
-        <Image
-          src='/mainIconsdark.svg'
-          alt='work-icons'
-          width={400}
-          height={400}
-          className="md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px]"
-        />
+        {/* Background floating image */}
+        <motion.div
+          animate={{
+            y: [0, -60, 0],
+            rotate: [0, 2, -2, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute"
+        >
+          <Image
+            src='/mainIconsdark.svg'
+            alt='background-icons'
+            width={400}
+            height={400}
+            className="md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px] opacity-80"
+          />
+        </motion.div>
+
+        {/* Foreground floating image */}
+        <motion.div
+          animate={{
+            y: [0, -15, 0],
+            x: [0, 5, -5, 0],
+            rotate: [0, -1, 1, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+          className="relative z-10"
+        >
+          <Image
+            src='/vishal.png'
+            alt='vishal-portrait'
+            width={400}
+            height={400}
+            className="md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px]"
+          />
+        </motion.div>
 
       </motion.div>
     </motion.div>
