@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image';
 
-const SkillDataProvider = ({ src, width, height, index }) => {
+const SkillDataProvider = ({ src, width, height, index, skillName }) => {
     const { ref, inView } = useInView({
         triggerOnce: true
     })
@@ -39,6 +39,11 @@ const SkillDataProvider = ({ src, width, height, index }) => {
                 alt='skill image'
                 className="w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain group-hover:drop-shadow-[0_0_10px_rgba(180,155,255,0.5)] transition-all duration-300"
             />
+            
+            {/* Skill name tooltip */}
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-[#0300145e] backdrop-blur-sm border border-[#7042f861] text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                {skillName}
+            </div>
         </motion.div>
     )
 }

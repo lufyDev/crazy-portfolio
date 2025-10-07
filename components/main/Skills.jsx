@@ -23,6 +23,7 @@ import {
               width={image.width}
               height={image.height}
               index={index}
+              skillName={image.skill_name}
             />
           ))}
         </div>
@@ -38,10 +39,6 @@ import {
 
         <div className="w-full flex flex-col items-center gap-8">
           <SkillSection title="Core Technologies" skills={Skill_data} />
-          <SkillSection title="Frontend Development" skills={Frontend_skill} />
-          <SkillSection title="Backend Development" skills={Backend_skill} />
-          <SkillSection title="Full Stack & Tools" skills={Full_stack} />
-          <SkillSection title="Additional Skills" skills={Other_skill} />
         </div>
   
         {/* <div className="w-full h-full absolute">
