@@ -1,39 +1,85 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/utils/motion'
 import Image from 'next/image'
 import { SparklesIcon } from '@heroicons/react/24/solid'
 
 const Projects = () => {
+  // Wake up Urban Update server in background when component mounts
+  useEffect(() => {
+    const wakeUpUrbanUpdate = async () => {
+      try {
+        // Make a background request to wake up the server
+        await fetch('https://urban-update.vercel.app/', {
+          method: 'GET',
+          mode: 'no-cors' // Use no-cors to avoid CORS issues since we don't need the response
+        });
+        console.log('Urban Update server wake-up request sent');
+      } catch (error) {
+        // Silently handle errors since this is a background operation
+        console.log('Urban Update wake-up request completed');
+      }
+    };
+
+    wakeUpUrbanUpdate();
+  }, []);
+
   const projects = [
     {
       id: 1,
-      title: "Space Themed Website",
-      description: "A beautiful space-themed website with stunning animations and modern design. Built with Next.js and Framer Motion.",
-      image: "/SpaceWebsite.png",
-      technologies: ["Next.js", "React", "Framer Motion", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Admin Dashboard",
+      description: "A sleek admin dashboard with real-time data integration and beautiful UI/UX design able to perform CRUD operations.",
+      image: "/refine.png",
+      technologies: ["React", "Node.js", "MongoDB", "Daisy-UI"],
+      liveUrl: "https://refine-dashboard-5vvw.onrender.com/",
+      githubUrl: "https://github.com/VishalMX3/Refine-Dashboard"
     },
     {
       id: 2,
-      title: "Next.js Portfolio",
-      description: "A modern portfolio website showcasing advanced web development skills with responsive design and smooth animations.",
-      image: "/NextWebsite.png",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Three.js"],
-      liveUrl: "#",
+      title: "3D Car Viewer",
+      description: "A browser-based 3D car viewer using WebGL-powered engines to enable real-time rendering of interactive vehicle model.",
+      image: "/threeDViewer.png",
+      technologies: ["React", "ThreeJs", "WebGL", "Tailwind CSS"],
+      liveUrl: "https://3d.spyne.ai/3d/v2?sku_id=2e9699d6245246878c8171ed9c8a880c&original=true",
       githubUrl: "#"
     },
     {
       id: 3,
-      title: "Crypto Card Application",
-      description: "A sleek crypto trading card application with real-time data integration and beautiful UI/UX design.",
-      image: "/CardImage.png",
-      technologies: ["React", "Node.js", "MongoDB", "Material-UI"],
-      liveUrl: "#",
+      title: "Spyne Demo Flow",
+      description: "Spyne's customer-facing demo page, with high performance and responsive design driving sales and user engagement.",
+      image: "/spyne.png",
+      technologies: ["Next.js", "React", "Material UI", "Tailwind CSS"],
+      liveUrl: "https://console.spyne.ai/virtualstudio/v2/demo?project_uuid=a42532d32df3423e8c1c9664e292ad7f&preset_id=7e5cd54194fa468c8537922b34ed6c04",
       githubUrl: "#"
+    },
+    {
+      id: 4,
+      title: "3D Shirt Customizer",
+      description: "A 3D shirt customizer where you can customize your shirt in your own style. Pick colors, add logos to make your virtual swag unique.",
+      image: "/three-d-shirt.png",
+      technologies: ["React", "ThreeJs", "Tailwind CSS"],
+      liveUrl: "https://ai-shop-3d.vercel.app/",
+      githubUrl: "https://github.com/lufyDev/ai-shop-3d"
+    },
+    {
+      id: 5,
+      title: "Urban Update",
+      description: "A news and publications website along with a strong CMS to manage the website CRUD operations on content.",
+      image: "/urban-update.png",
+      technologies: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS"],
+      liveUrl: "https://urban-update.vercel.app/",
+      githubUrl: "#"
+    },
+    {
+      id: 6,
+      title: "Haunted House",
+      description: "A haunted house scene created which demonstrates the use of Three.js to create a 3D scene, add lights, textures and shadow.",
+      image: "/haunted.png",
+      technologies: ["React", "ThreeJs", "Tailwind CSS"],
+      liveUrl: "https://haunted-house-delta-one.vercel.app/",
+      githubUrl: "https://github.com/lufyDev/haunted-house"
     }
   ];
 
@@ -88,9 +134,16 @@ const Projects = () => {
 
             {/* Project Content */}
             <div className="p-6">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
-                {project.title}
-              </h3>
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer"
+              >
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors hover:text-purple-400">
+                  {project.title}
+                </h3>
+              </a>
               <p className="text-gray-400 text-sm md:text-base mb-4 line-clamp-3">
                 {project.description}
               </p>
@@ -109,18 +162,22 @@ const Projects = () => {
 
               {/* Action Buttons */}
               <div className="flex gap-4">
-                <a
+                {project?.liveUrl != "#" && <a
                   href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 py-2 px-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white text-center rounded-lg hover:opacity-80 transition-opacity text-sm font-medium"
                 >
                   Live Demo
-                </a>
-                <a
+                </a>}
+                {project?.githubUrl != "#" && <a
                   href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 py-2 px-4 border border-gray-600 text-gray-300 text-center rounded-lg hover:border-purple-500 hover:text-purple-400 transition-colors text-sm font-medium"
                 >
                   GitHub
-                </a>
+                </a>}
               </div>
             </div>
           </motion.div>
