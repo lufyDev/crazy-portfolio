@@ -35,7 +35,7 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className='text-base md:text-lg text-gray-400 my-5 max-w-[600px]'
         >
-          I&apos;m <span className='text-transparent font-bold bg-clip-text bg-gradient-to-r from-white to-cyan-500'>Vishal Pundhir</span> a full stack developer with a passion for creating beautiful and functional
+          I&apos;m <span className='text-transparent font-bold bg-clip-text bg-gradient-to-r from-white to-cyan-500'>Vishal Pundhir</span>, a full stack developer with 1+ years of experience and a passion for creating beautiful and functional
           web applications with an added advantage of integrating <span className='text-transparent font-bold bg-clip-text bg-gradient-to-r from-white to-cyan-500'>3D meshes</span> in my projects. I&apos;m a quick learner and I&apos;m always looking to improve my skills.
         </motion.p>
 
