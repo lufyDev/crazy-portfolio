@@ -74,21 +74,21 @@ const Contact = () => {
                 <EnvelopeIcon className="h-6 w-6 text-purple-400" />
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
-                  <p className="text-white">contact@webchaindev.com</p>
+                  <p className="text-white">vishalpundhirofficial@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4 p-4 rounded-lg bg-[#0300145e] border border-[#7042f861] hover:border-purple-500/50 transition-colors">
                 <PhoneIcon className="h-6 w-6 text-purple-400" />
                 <div>
                   <p className="text-gray-400 text-sm">Phone</p>
-                  <p className="text-white">+1 (555) 123-4567</p>
+                  <p className="text-white">+91 8193809760</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4 p-4 rounded-lg bg-[#0300145e] border border-[#7042f861] hover:border-purple-500/50 transition-colors">
                 <MapPinIcon className="h-6 w-6 text-purple-400" />
                 <div>
                   <p className="text-gray-400 text-sm">Location</p>
-                  <p className="text-white">San Francisco, CA</p>
+                  <p className="text-white">Gurugram, India</p>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@ const Contact = () => {
                     alt={social.name}
                     width={24}
                     height={24}
-                    className="w-6 h-6"
+                    className={`w-6 h-6 ${social.name === 'GitHub' ? 'bg-white rounded-full p-0.5' : ''}`}
                   />
                 </motion.a>
               ))}
@@ -195,16 +195,16 @@ const Contact = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex items-center space-x-2">
             <Image
-              src="/NavLogo.png"
+              src="/v-logo.png"
               alt="logo"
               width={40}
               height={40}
-              className="w-10 h-10"
+              className="w-[120px] h-[40px]"
             />
-            <span className="text-white font-bold">WebChain Dev</span>
+            {/* <span className="text-white font-bold">Vishal Pundhir</span> */}
           </div>
           <p className="text-gray-400 text-sm">
-            © 2024 WebChain Dev. All rights reserved.
+            © 2024 Vishal Pundhir. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">

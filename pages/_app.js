@@ -5,7 +5,7 @@ import NavBar from "@/components/main/NavBar";
 export default function App({ Component, pageProps }) {
   return (
     <div className="relative min-h-screen">
-      <StarsCanvas />
+      {/* <StarsCanvas /> */}
       <NavBar />
       <Component {...pageProps} />
     </div>

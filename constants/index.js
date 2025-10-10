@@ -102,27 +102,22 @@ export const Socials = [
   {
     name: "Instagram",
     src: "/instagram.svg",
-    url: "https://instagram.com/webchaindev"
-  },
-  {
-    name: "Facebook", 
-    src: "/facebook.svg",
-    url: "https://facebook.com/webchaindev"
-  },
-  {
-    name: "Discord",
-    src: "/discord.svg",
-    url: "https://discord.gg/webchaindev"
+    url: "https://www.instagram.com/vishal.codes/"
   },
   {
     name: "GitHub",
     src: "/github-142-svgrepo-com.svg",
-    url: "https://github.com/webchaindev"
+    url: "https://github.com/lufyDev/"
   },
   {
     name: "YouTube",
     src: "/youtube-svgrepo-com.svg", 
-    url: "https://youtube.com/@webchaindev"
+    url: "https://www.youtube.com/@codeLine7"
+  },
+  {
+    name: "LinkedIn",
+    src: "/linkedin.png",
+    url: "https://www.linkedin.com/in/vishal-pundhir-31059b197/"
   }
 ];
   

@@ -22,20 +22,18 @@ const Navbar = () => {
           className="h-auto w-auto flex flex-row items-center"
         >
           <Image
-            src="/NavLogo.png"
+            src="/v-logo.png"
             alt="logo"
             width={50}
             height={50}
-            className="cursor-pointer hover:animate-slowspin md:w-[70px] md:h-[70px]"
+            className="cursor-pointer hover:animate-slowspin md:w-[120px] md:h-[40px]"
           />
 
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300">
-            WebChain Dev
-          </span>
+         
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
+        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between">
           <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a href="#about-me" className="cursor-pointer hover:text-purple-400 transition-colors">
               About me
@@ -54,7 +52,7 @@ const Navbar = () => {
 
         {/* Desktop Social Links */}
         <div className="hidden md:flex flex-row gap-5">
-          {Socials.slice(0, 3).map((social) => (
+          {Socials.map((social) => (
             <a 
               key={social.name} 
               href={social.url} 
@@ -67,7 +65,7 @@ const Navbar = () => {
                 alt={social.name}
                 width={24}
                 height={24}
-                className="cursor-pointer"
+                className={`cursor-pointer ${social.name === 'GitHub' ? 'bg-white rounded-full p-0.5' : ''}`}
               />
             </a>
           ))}
@@ -133,7 +131,7 @@ const Navbar = () => {
                       alt={social.name}
                       width={24}
                       height={24}
-                      className="cursor-pointer"
+                      className={`cursor-pointer ${social.name === 'GitHub' ? 'bg-white rounded-full p-0.5' : ''}`}
                     />
                   </a>
                 ))}
