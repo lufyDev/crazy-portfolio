@@ -118,3 +118,9 @@ html {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+/* Hide hero images via opacity when menu is open (no layout shift) */
+body.menu-open .hero-portrait,
+body.menu-open .hero-bg-icons {
+    opacity: 0 !important;
+}

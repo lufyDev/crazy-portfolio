@@ -1,6 +1,6 @@
 import { Socials } from "@/constants";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
@@ -13,6 +13,17 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const body = document.body;
+      if (isMenuOpen) {
+        body.classList.add('menu-open');
+      } else {
+        body.classList.remove('menu-open');
+      }
+    }
+  }, [isMenuOpen]);
 
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-4 md:px-10">
@@ -85,7 +96,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="absolute top-[65px] left-0 w-full bg-[#03001417] backdrop-blur-md border-t border-[#7042f861] md:hidden">
+          <div className="absolute top-[65px] left-0 w-full bg-[#030014]/40 backdrop-blur-3xl backdrop-saturate-150 border-t border-white/10 shadow-lg md:hidden">
             <div className="flex flex-col p-4 space-y-4">
               <a 
                 href="#about-me" 

@@ -70,7 +70,7 @@ const HeroContent = () => {
             alt='background-icons'
             width={400}
             height={400}
-            className="md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px] opacity-80"
+            className="hero-bg-icons md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px] opacity-80"
           />
         </motion.div>
 
@@ -94,7 +94,7 @@ const HeroContent = () => {
             alt='vishal-portrait'
             width={400}
             height={400}
-            className="md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px]"
+            className="hero-portrait md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px]"
           />
         </motion.div>
 
