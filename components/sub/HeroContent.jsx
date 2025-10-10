@@ -94,7 +94,7 @@ const HeroContent = () => {
             alt='vishal-portrait'
             width={400}
             height={400}
-            className="hero-portrait md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px]"
+            className="hero-portrait md:min-w-[650px] md:min-h-[650px] lg:min-w-[650px] lg:min-h-[650px] lg:w-[650px] lg:h-[650px]"
           />
         </motion.div>
 
