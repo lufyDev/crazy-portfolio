@@ -16,9 +16,9 @@ const HeroContent = () => {
       <div className='h-full w-full flex flex-col gap-5 m-auto justify-center text-center lg:text-start'>
         <motion.div
           variants={slideInFromTop}
-          className='Welcome-box py-[8px] px-[4px] border border-[#7042f88b] opacity-[0.9] mx-auto lg:mx-0'>
+          className='Welcome-box py-[8px] px-[8px] border border-[#7042f88b] opacity-[0.9] mx-auto lg:mx-0'>
           <SparklesIcon className='w-5 h-5 text-[#b49bff] mr-[10px]' />
-          <h1 className='Welcome-text text-[13px]'>Full Stack Developer Portfolio</h1>
+          <h1 className='Welcome-text text-[13px]'>Full Stack Developer</h1>
         </motion.div>
 
         <motion.div
@@ -35,8 +35,8 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className='text-base md:text-lg text-gray-400 my-5 max-w-[600px]'
         >
-          I&apos;m a full stack developer with a passion for creating beautiful and functional
-          web applications. I&apos;m a quick learner and I&apos;m always looking to improve my skills.
+          I&apos;m <span className='text-transparent font-bold bg-clip-text bg-gradient-to-r from-white to-cyan-500'>Vishal Pundhir</span> a full stack developer with a passion for creating beautiful and functional
+          web applications with an added advantage of integrating <span className='text-transparent font-bold bg-clip-text bg-gradient-to-r from-white to-cyan-500'>3D meshes</span> in my projects. I&apos;m a quick learner and I&apos;m always looking to improve my skills.
         </motion.p>
 
         <motion.a
