@@ -13,6 +13,8 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState({ type: '', message: '' });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,12 +24,31 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    if (submitting) return;
+    setSubmitting(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setStatus({ type: 'success', message: 'Message sent successfully!' });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (err) {
+      setStatus({ type: 'error', message: err.message || 'Something went wrong.' });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -174,11 +195,17 @@ const Contact = () => {
                 placeholder="Tell me about your project..."
               />
             </div>
+            {status.message && (
+              <div className={`${status.type === 'success' ? 'text-green-400' : 'text-red-400'} text-sm`}>
+                {status.message}
+              </div>
+            )}
             <button
               type="submit"
-              className="w-full py-3 px-6 button-primary text-white rounded-lg hover:scale-105 transition-transform font-medium"
+              disabled={submitting}
+              className={`w-full py-3 px-6 button-primary text-white rounded-lg transition-transform font-medium ${submitting ? 'opacity-70 cursor-not-allowed' : 'hover:scale-105'}`}
             >
-              Send Message
+              {submitting ? 'Sending…' : 'Send Message'}
             </button>
           </form>
         </motion.div>
