@@ -7,24 +7,6 @@ import Image from 'next/image'
 import { SparklesIcon } from '@heroicons/react/24/solid'
 
 const Projects = () => {
-  // Wake up Urban Update server in background when component mounts
-  useEffect(() => {
-    const wakeUpUrbanUpdate = async () => {
-      try {
-        // Make a background request to wake up the server
-        await fetch('https://urban-update.vercel.app/', {
-          method: 'GET',
-          mode: 'no-cors' // Use no-cors to avoid CORS issues since we don't need the response
-        });
-        console.log('Urban Update server wake-up request sent');
-      } catch (error) {
-        // Silently handle errors since this is a background operation
-        console.log('Urban Update wake-up request completed');
-      }
-    };
-
-    wakeUpUrbanUpdate();
-  }, []);
 
   const projects = [
     {
@@ -69,7 +51,7 @@ const Projects = () => {
       description: "A news and publications website along with a strong CMS to manage the website CRUD operations on content.",
       image: "/urban-update.png",
       technologies: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS"],
-      liveUrl: "https://urban-update.vercel.app/",
+      liveUrl: "https://qa.urbanupdate.in/",
       githubUrl: "#"
     },
     {
